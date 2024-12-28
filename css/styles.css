@@ -68,13 +68,11 @@ header a {
 
 /* Profile Picture */
 .profile-img {
-    max-width: 15px;
-    max-height: 15px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 20 auto;
-    display: block;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 150px; /* Set a reasonable width */
+    height: 150px;
+    border-radius: 50%; /* Keep circular shape */
+    display: block; /* Ensure it displays */
+    margin: 0 auto; /* Center it */
 }
 
 /* About Section */
