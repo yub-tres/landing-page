@@ -1,6 +1,13 @@
 /* Importing the "EB Garamond" font */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
-
+#about p, 
+#skills p, 
+#projects p, 
+#contact p {
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+    color: #444; 
+}
 /* General Styles */
 body {
     font-family: 'EB Garamond', serif;
@@ -138,8 +145,8 @@ header a {
 }
 
 .card-text {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.1rem; 
+    line-height: 1.8;
 }
 
 /* Contact Section */
