@@ -68,11 +68,11 @@ header a {
 
 /* Profile Picture */
 .profile-img {
-    width: 150px; /* Set a reasonable width */
-    height: 150px;
-    border-radius: 50%; /* Keep circular shape */
-    display: block; /* Ensure it displays */
-    margin: 0 auto; /* Center it */
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    display: block; 
+    margin: 10 auto; 
 }
 
 /* About Section */
