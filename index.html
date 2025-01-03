@@ -6,24 +6,65 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Personal - Tresor Yubahwe</title>
-        <!-- Favicon-->
+        <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
+        <!-- Custom Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
+        <!-- Bootstrap icons -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <!-- Core theme CSS -->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* Overlay to improve text readability */
+            .video-background {
+                position: relative;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            }
+            .video-background::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+                z-index: 1;
+            }
+            .video-background video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 0;
+            }
+            .video-background .container {
+                position: relative;
+                z-index: 2;
+            }
+
+            /* Add spacing for sections linked via navigation */
+            section {
+                padding: 100px 0;
+            }
+
+            #about,
+            #skills,
+            #contact {
+                scroll-margin-top: 70px; /* Prevent section header overlap with sticky navbar */
+            }
+        </style>
     </head>
     <body class="d-flex flex-column h-100">
-        <!-- Header Section with Video Background -->
         <header class="video-background">
-            <video autoplay loop muted playsinline class="background-video">
-                <source src="profile-background.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
             <div class="container px-5 pb-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-xxl-5">
@@ -42,14 +83,20 @@
                     </div>
                 </div>
             </div>
+            <video autoplay loop muted playsinline class="background-video">
+                <source src="assets/profile-background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </header>
-
+        
         <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
                 <div class="container px-5">
                     <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Tresor Yubahwe</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -61,57 +108,146 @@
                 </div>
             </nav>
 
-            <!-- Other Sections -->
             <!-- About Section -->
-            <section id="about" class="bg-light py-5">
+            <section id="about" class="bg-light">
                 <div class="container px-5">
                     <div class="text-center mb-5">
                         <h2 class="display-5 fw-bolder">About Me</h2>
                         <p class="lead fw-light">
                             I am Tresor Yubahwe, a Computer Science student at Princeton University and a Software Engineering Resident at HeadStarter, driven by a passion for AI, data science, and creating impactful solutions for underserved communities.
-                            My technical journey is defined by hands-on experience with tools and frameworks such as PyTorch, TensorFlow, Firebase and React.js. I have had the privilege of building innovative projects in the health and education sectors,
-                            leveraging large language models (LLMs) to address real-world challenges and create meaningful impact.
                         </p>
                     </div>
                 </div>
             </section>
+
             <!-- Skills Section -->
-            <section id="skills" class="py-5">
+            <section id="skills" class="bg-white">
                 <div class="container px-5">
                     <div class="text-center mb-5">
                         <h2 class="display-5 fw-bolder">Skills</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 text-center">
-                            <i class="bi bi-code-slash fs-1 text-gradient"></i>
-                            <h5 class="mt-3">Programming</h5>
-                            <p>Java, Python, JavaScript, React.js, Next.js, HTML</p>
-                        </div>
-                        <div class="col-lg-4 text-center">
-                            <i class="bi bi-graph-up-arrow fs-1 text-gradient"></i>
-                            <h5 class="mt-3">AI/ML Tools</h5>
-                            <p>LLMs, Hugging Face, PyTorch</p>
-                        </div>
-                        <div class="col-lg-4 text-center">
-                            <i class="bi bi-bar-chart fs-1 text-gradient"></i>
-                            <h5 class="mt-3">Other Skills</h5>
-                            <p>Project Management, CRM (HubSpot)</p>
-                        </div>
+                        <p>Java, Python, React, Firebase, PyTorch, and TensorFlow.</p>
                     </div>
                 </div>
             </section>
-            <!-- Continue with the other sections... -->
-        </main>
 
-        <!-- Footer -->
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="text-center">
-                    <p class="small m-0">&copy; Tresor Yubahwe 2024</p>
+<!-- Projects Section -->
+<section id="projects" class="bg-light py-5">
+    <div class="container px-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bolder">Projects</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Personalized Learning System</h5>
+                        <p class="card-text">
+                            Developed an AI-powered system to improve student engagement rates by 30% using Hugging Face and PyTorch. Applied natural language processing (NLP) for content embeddings and trained models with CUDA-optimized GPUs, enhancing learning outcomes in Rwandan schools. Future plans include integrating adaptive feedback loops to further individualize learning paths.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">USSD Chatbot</h5>
+                        <p class="card-text">
+                            Built a USSD-based chatbot integrated with Twilio's WhatsApp API for delivering sexual and reproductive health education to underserved communities. Leveraged Flask for backend operations, reaching 65+ women with no smartphone access. Future enhancements include adding multilingual support and expanding the chatbot's functionality to include mental health resources.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pentagram Project</h5>
+                        <p class="card-text">
+                            Collaborated as a Software Engineering Resident to optimize user workflows for recruitment at HeadStarter. Designed and implemented advanced analytics with modern UI principles to streamline processes, improving user efficiency. Future goals include integrating AI-driven recommendations for dynamic insights into hiring trends.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pantry Management System</h5>
+                        <p class="card-text">
+                            Designed and implemented a pantry management system with Next.js, Material UI, and Firebase for real-time inventory updates. Integrated GCP Vertex AI and AutoML for intelligent image classification to categorize pantry items. Future plans include expanding to support multi-location tracking and detailed nutritional analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">AI Answer Engine</h5>
+                        <p class="card-text">
+                            Developed an AI Answer Engine leveraging Hugging Face Transformers for real-time domain-specific question answering. Enhanced performance by fine-tuning transformers for precision and speed. Future upgrades will incorporate multilingual support and broader datasets to improve contextual understanding across industries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Operational Strategy at Zerox Tech</h5>
+                        <p class="card-text">
+                            As Chief Operating Officer at Zerox Tech, implemented operational strategies to scale company processes using data-driven solutions. Conducted efficiency analyses and introduced AI tools for streamlined operations. Future plans involve exploring predictive analytics for optimizing long-term business planning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Princeton AI Alignment Lab</h5>
+                        <p class="card-text">
+                            Conducted research on ethical implications of AI, focusing on reinforcement learning and AI safety techniques such as ELK (Eliciting Latent Knowledge) and mechanistic interpretability. Collaborated with peers to analyze readings on topics like reward misspecification and scalable oversight. Applied findings to propose scalable frameworks for safe AI deployment. Future goals include publishing findings and extending this work to practical AI ethics courses.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Here for You (H4U)</h5>
+                        <p class="card-text">
+                            Founded and led Here for You, an initiative addressing learning poverty in Rwanda through digital literacy and civic entrepreneurship bootcamps. Delivered 1,800 hours of digital literacy training and facilitated civic projects for underserved students. Achieved national recognition for implementing programs resulting in a 300% increase in ICT engagement. Future plans include developing an online platform to scale H4U’s impact globally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="bg-light">
+    <div class="container px-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bolder">Contact Me</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="bg-white py-4 mt-auto">
+<div class="container px-5">
+    <div class="text-center">
+        <p class="small m-0">&copy; Tresor Yubahwe 2024</p>
+    </div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
